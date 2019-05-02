@@ -1,5 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH="/usr/local/opt/python@2/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/python@2/bin:/Users/mvy/Projects/owl/bin"
+
+# for twilio owl command
+eval "$(pyenv init -)"
+alias owl="SSH_AUTH_SOCK= owl"
+export OWL="/Users/mvy/Projects/owl"
+eval "$("$OWL/bin/owl" init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mvy/.oh-my-zsh"
@@ -8,7 +16,7 @@ export ZSH="/Users/mvy/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="clean"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -62,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +107,14 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 bindkey "^[^M" autosuggest-accept   
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+source /Users/mvy/Projects/minhtrangvy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+bco () {
+  git branch $1
+  git checkout $1
+}
