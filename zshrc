@@ -107,7 +107,7 @@ bindkey "[D" backward-word
 bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
-bindkey "^[^M" autosuggest-accept   
+bindkey "^[^M" autosuggest-accept
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 #bindkey "\e\e[D": backward-word
@@ -122,7 +122,7 @@ bco () {
   git checkout $1
 }
 
-# Run the reveal.js generator to convert .md files to .html files 
+# Run the reveal.js generator to convert .md files to .html files
 # and one day hopefully .pdf files
 generate () {
 	cd '/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io'
@@ -135,12 +135,12 @@ pushslides () {
 	cd '/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io'
 	git add .
 	git commit -am "changed slides"
-	git push 
+	git push
 }
 
 # Just open all the frequently used GA folders
 SLIDES_FOLDER='/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io'
-COURSE_REPO='/Users/mvy/Documents/GA/Python 3/Python3' 
+COURSE_REPO='/Users/mvy/Documents/GA/Python 3/Python3'
 PYTHON_PROGRAMMING='/Users/mvy/Documents/GA/Python 3/python-programming'
 gastuff () {
 	atom $SLIDES_FOLDER
