@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/usr/local/opt/python@2/bin:$PATH"
-export PATH="$PATH:/usr/local/opt/python@2/bin:/Users/mvy/Projects/owl/bin:/usr/local/lib/python2.7/site-packages:/usr/texbin"
+export PATH="$PATH:/usr/local/opt/node@6/bin:/usr/local/opt/python@2/bin:/Users/mvy/Projects/owl/bin:/usr/local/lib/python2.7/site-packages:/usr/texbin"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#export JAVA_HOME=/Library/Java/Home
+export M2_HOME=/Users/mvy/apache-maven-3.6.2
+export PATH=$PATH:$M2_HOME/bin
 
 # for twilio owl command
 eval "$(pyenv init -)"
@@ -113,7 +116,7 @@ bindkey "^[[B" history-beginning-search-forward
 #bindkey "\e\e[D": backward-word
 #bindkey "\e\e[C": forward-word
 
-source /Users/mvy/Projects/minhtrangvy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/mvy/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -125,14 +128,14 @@ bco () {
 # Run the reveal.js generator to convert .md files to .html files
 # and one day hopefully .pdf files
 generate () {
-	cd '/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io'
-	python3 '/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io/generator.py' html
+	cd '/Users/mvy/GA/minhtrangvy.github.io'
+	python3 '/Users/mvy/GA/minhtrangvy.github.io/generator.py' html
 	pushslides
 }
 
 # Push Python3 slides to Github Pages
 pushslides () {
-	cd '/Users/mvy/Documents/GA/Python 3/minhtrangvy.github.io'
+	cd '/Users/mvy/GA/minhtrangvy.github.io'
 	git add .
 	git commit -am "changed slides"
 	git push
@@ -161,3 +164,7 @@ alias proxy-service='cd ~/Projects/proxy-service'
 export PATH="/usr/local/opt/php@5.6/bin:$PATH"
 export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
 export PATH="/usr/local/opt/node@6/bin:$PATH"
+
+export PATH="/usr/local/opt/node@6/bin:$PATH"
+export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
